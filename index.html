@@ -1,29 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AK | Data Analyst & AI Enthusiast</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      min-height: 100vh;
+      background: #f4f4f4;
+    }
+
+    aside {
+      background: #1e1e2f;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    aside h2 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    aside ul {
+      list-style: none;
+    }
+
+    aside ul li {
+      margin-bottom: 0.8rem;
+      line-height: 1.5;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .intro {
+      margin-bottom: 2rem;
+    }
+
+    .intro h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro p {
+      color: #555;
+      max-width: 700px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+      color: #1e1e2f;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hi, I'm AK 👋</h1>
-  <p>
-    I'm a data analyst and aspiring AI researcher with a strong foundation in applied mathematics, data science, and statistical modeling.
-    I hold a Master's degree in Applied Mathematics (Data Science specialization) from Indiana University of Pennsylvania and am currently pursuing a Master’s in Business Analytics at the University of Illinois Urbana-Champaign.
-  </p>
-  
-  <p>
-    My experience spans across <strong>healthcare, environmental, and business analytics</strong>, where I have worked on projects involving <strong>machine learning, sentiment analysis, predictive modeling</strong>, and <strong>data visualization</strong>. I enjoy turning raw data into actionable insights that drive decision-making.
-  </p>
+  <aside>
+    <h2>Education</h2>
+    <ul>
+      <li>MS Applied Mathematics, IUP (2024)</li>
+      <li>BS Computer Science, Crawford University (2016)</li>
+    </ul>
 
-  <p>
-    My technical toolkit includes <strong>Python, R, SQL, Tableau, and MySQL Workbench</strong>. I’m currently building hands-on projects in <strong>data analytics and AI</strong>, including customer review sentiment analysis and real estate price prediction.
-  </p>
+    <h2>Certifications</h2>
+    <ul>
+      <li>Six Sigma Yellow Belt</li>
+      <li>Google Data Analytics</li>
+      <li>Google BI & Advanced Data Analytics</li>
+      <li>Professional Scrum Master</li>
+    </ul>
 
-  <ul>
-    <li><a href="projects.html">🔍 View My Projects</a></li>
-    <li><a href="resume.pdf">📄 View My Resume</a></li>
-    <li><a href="mailto:your@email.com">📫 Contact Me</a></li>
-  </ul>
+    <h2>Skills</h2>
+    <ul>
+      <li>Python, R, SQL</li>
+      <li>Power BI, Tableau, Excel</li>
+      <li>Statistical Modeling, Forecasting</li>
+      <li>Data Cleaning & Dashboards</li>
+    </ul>
+  </aside>
+
+  <main>
+    <section class="intro">
+      <h1>Hi, I'm AK 👋</h1>
+      <p>
+        I'm a Data Analyst and AI enthusiast with experience in public sector, finance, and healthcare systems.
+        Passionate about turning raw data into actionable insights using Python, R, SQL, and data visualization tools.
+      </p>
+    </section>
+
+    <section class="projects">
+      <div class="project-card">
+        <h3>1. House Price Prediction</h3>
+        <p>Built a regression model in R to predict South Carolina housing prices using zip code and property features.</p>
+      </div>
+      <div class="project-card">
+        <h3>2. Sentiment Analysis App</h3>
+        <p>Developed an R Shiny app for customer review sentiment analysis using NLP and visualization.</p>
+      </div>
+      <div class="project-card">
+        <h3>3. Medicaid Data Analysis</h3>
+        <p>Analyzed Illinois Medicaid eligibility and program data using SQL and Excel dashboards.</p>
+      </div>
+      <div class="project-card">
+        <h3>4. COVID Wastewater Surveillance</h3>
+        <p>Used R to model the relationship between COVID viral loads in wastewater and clinical case trends.</p>
+      </div>
+      <div class="project-card">
+        <h3>5. Dashboard for Financial Ops</h3>
+        <p>Created interactive dashboards in Power BI for Polaris Bank operational KPIs.</p>
+      </div>
+      <div class="project-card">
+        <h3>6. Bank Reconciliation Automation</h3>
+        <p>Designed reconciliation templates and performed SQL-based transaction audits at Coronation Bank.</p>
+      </div>
+      <div class="project-card">
+        <h3>7. Academic Tutoring Dashboard</h3>
+        <p>Analyzed tutoring data and student outcomes to improve services at IUP’s Math Dept.</p>
+      </div>
+      <div class="project-card">
+        <h3>8. Business Intelligence Portfolio</h3>
+        <p>Compiled BI projects using Google Data Analytics techniques for actionable insights.</p>
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>
