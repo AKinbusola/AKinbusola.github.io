@@ -15,7 +15,7 @@
 
     body {
       display: grid;
-      grid-template-columns: 250px 1fr;
+      grid-template-columns: 300px 1fr;
       min-height: 100vh;
       background: #f4f4f4;
       transition: background 0.3s, color 0.3s;
@@ -30,31 +30,49 @@
       background: #1e1e2f;
       color: #fff;
       padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
 
-    aside h2 {
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
+    .side-section {
+      background-color: #2e2e42;
+      padding: 1rem;
+      border-radius: 10px;
     }
 
-    aside ul {
+    .side-section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .side-section ul {
       list-style: none;
+      padding-left: 0;
     }
 
-    aside ul li {
-      margin-bottom: 0.8rem;
-      line-height: 1.5;
+    .side-section ul li {
+      margin-bottom: 0.5rem;
     }
 
     main {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
       padding: 2rem;
+    }
+
+    .pane {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
     header {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
+      gap: 1.5rem;
     }
 
     header img {
@@ -64,18 +82,14 @@
       object-fit: cover;
     }
 
-    header .intro-text {
-      flex-grow: 1;
-    }
-
     header .intro-text h1 {
       font-size: 2rem;
       color: #333;
     }
 
     header .intro-text p {
-      margin: 0.2rem 0;
       font-weight: 500;
+      margin: 0.3rem 0;
     }
 
     .links a {
@@ -92,10 +106,6 @@
       color: #fff;
       border: none;
       border-radius: 5px;
-    }
-
-    .about, .publications, .projects {
-      margin-bottom: 2rem;
     }
 
     .projects {
@@ -129,62 +139,82 @@
       color: #666;
     }
 
+    .publications ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .publications ul li {
+      margin-bottom: 0.5rem;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
       background-color: #1e1e2f;
       color: #fff;
+      grid-column: 1 / -1;
     }
   </style>
 </head>
 
 <body>
   <aside>
-    <h2>Contact</h2>
-    <ul>
-      <li>Email: olushola.akinbusola@gmail.com</li>
-      <li><a href="https://github.com/AKinbusola" target="_blank" style="color:#90caf9;">GitHub Profile</a></li>
-    </ul>
+    <div class="side-section">
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: olushola.akinbusola@gmail.com</li>
+        <li><a href="https://github.com/AKinbusola" target="_blank" style="color:#90caf9;">GitHub Profile</a></li>
+      </ul>
+    </div>
 
-    <h2>Skills</h2>
-    <ul>
-      <li>Python, R, SQL</li>
-      <li>Power BI, Tableau, Excel</li>
-      <li>Statistical Modeling, Forecasting</li>
-      <li>Data Cleaning & Dashboards</li>
-    </ul>
+    <div class="side-section">
+      <h2>Skills</h2>
+      <ul>
+        <li>Python, R, SQL</li>
+        <li>Power BI, Tableau, Excel</li>
+        <li>Statistical Modeling, Forecasting</li>
+        <li>Data Cleaning & Dashboards</li>
+      </ul>
+    </div>
 
-    <h2>Education</h2>
-    <ul>
-      <li>MS Applied Mathematics, IUP (2024)</li>
-      <li>BS Computer Science, Crawford University (2016)</li>
-    </ul>
+    <div class="side-section">
+      <h2>Education</h2>
+      <ul>
+        <li>MS Applied Mathematics, IUP (2024)</li>
+        <li>BS Computer Science, Crawford University (2016)</li>
+      </ul>
+    </div>
 
-    <h2>Certifications</h2>
-    <ul>
-      <li>Six Sigma Yellow Belt</li>
-      <li>Google Data Analytics</li>
-      <li>Google BI & Advanced Data Analytics</li>
-      <li>Professional Scrum Master</li>
-    </ul>
+    <div class="side-section">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Six Sigma Yellow Belt</li>
+        <li>Google Data Analytics</li>
+        <li>Google BI & Advanced Data Analytics</li>
+        <li>Professional Scrum Master</li>
+      </ul>
+    </div>
   </aside>
 
   <main>
-    <header>
-      <img src="profile.jpg" alt="Akinbusola Olushola">
-      <div class="intro-text">
-        <h1>Akinbusola Olushola</h1>
-        <p>Data Analyst | Business Intelligence Analyst | Data Scientist</p>
-        <div class="links">
-          <a href="#">LinkedIn</a>
-          <a href="#">Google Scholar</a>
-          <a href="#">ResearchGate</a>
+    <section class="pane">
+      <header>
+        <img src="profile.jpg" alt="Akinbusola Olushola">
+        <div class="intro-text">
+          <h1>Akinbusola Olushola</h1>
+          <p>Data Analyst | Business Intelligence Analyst | Data Scientist</p>
+          <div class="links">
+            <a href="#">LinkedIn</a>
+            <a href="#">Google Scholar</a>
+            <a href="#">ResearchGate</a>
+          </div>
+          <button class="dark-toggle" onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
         </div>
-        <button class="dark-toggle" onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
-      </div>
-    </header>
+      </header>
+    </section>
 
-    <section class="about">
+    <section class="pane about">
       <h2>About Me</h2>
       <p>
         Data Analyst with a strong foundation in SQL, Python, and data visualization, combined with proven experience supporting business
@@ -194,7 +224,8 @@
       </p>
     </section>
 
-    <section class="projects">
+    <section class="pane projects">
+      <h2>Projects</h2>
       <div class="project-card">
         <img src="project1.jpg" alt="Project 1">
         <h3>House Price Prediction</h3>
@@ -203,7 +234,7 @@
       <!-- Repeat project-card blocks for each of the 8 projects with images -->
     </section>
 
-    <section class="publications">
+    <section class="pane publications">
       <h2>Publications</h2>
       <ul>
         <li><a href="#">Title of Paper 1</a></li>
