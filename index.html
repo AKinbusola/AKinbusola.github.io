@@ -1,296 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akinbusola Olushola | Data Analyst & BI Specialist</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+body {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  min-height: 100vh;
+  background: #f5f7fb;
+  transition: all 0.3s ease;
+}
 
-    body {
-      display: grid;
-      grid-template-columns: 400px 1fr;
-      min-height: 100vh;
-      background: #f4f4f4;
-      transition: background 0.3s, color 0.3s;
-    }
+/* DARK MODE */
+.dark-mode {
+  background: #0f172a;
+  color: #e2e8f0;
+}
 
-    .dark-mode {
-      background: #121212;
-      color: #e0e0e0;
-    }
+.dark-mode .pane,
+.dark-mode .project-card,
+.dark-mode header,
+.dark-mode .about {
+  background: #1e293b;
+  color: #e2e8f0;
+}
 
-    .dark-mode .pane,
-    .dark-mode .project-card,
-    .dark-mode header,
-    .dark-mode .about {
-      background: #1e1e2f;
-      color: #e0e0e0;
-    }
+/* SIDEBAR */
+aside {
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 
-    aside {
-      background: #1e1e2f;
-      color: #fff;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
+.side-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
 
-    .side-section {
-      background-color: #2e2e42;
-      padding: 1rem;
-      border-radius: 10px;
-    }
+.side-section:hover {
+  transform: translateY(-3px);
+}
 
-    .side-section h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
+.side-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 0.3rem;
+}
 
-    .side-section ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-    }
+.side-section ul {
+  list-style: none;
+  padding-left: 0;
+}
 
-    .side-section ul li {
-      margin-bottom: 0.5rem;
-    }
+.side-section ul li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
 
-    main {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 2rem;
-    }
+/* MAIN */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
 
-    .pane {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
+.pane {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
 
-    header {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
 
-    header img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+header img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid #3b82f6;
+}
 
-    header .intro-text h1 {
-      font-size: 2rem;
-    }
+header h1 {
+  font-size: 2rem;
+}
 
-    header .intro-text p {
-      font-weight: 500;
-      margin: 0.3rem 0;
-    }
+header p {
+  font-weight: 500;
+  color: #64748b;
+}
 
-    .links a {
-      margin-right: 10px;
-      text-decoration: none;
-      color: #0073b1;
-    }
+.links a {
+  margin-right: 12px;
+  text-decoration: none;
+  color: #3b82f6;
+  font-weight: 500;
+}
 
-    .dark-toggle {
-      margin-top: 10px;
-      padding: 0.3rem 0.6rem;
-      cursor: pointer;
-      background-color: #444;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-    }
+.links a:hover {
+  text-decoration: underline;
+}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
+/* BUTTON */
+.dark-toggle {
+  margin-top: 10px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  background: #3b82f6;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  transition: 0.2s;
+}
 
-    .project-card {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
+.dark-toggle:hover {
+  background: #2563eb;
+}
 
-    .project-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-    }
+/* PROJECTS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
 
-    .project-card h3 {
-      margin-bottom: 0.3rem;
-      color: #1e1e2f;
-    }
+.project-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
 
-    .project-card p {
-      font-size: 0.9rem;
-      color: #666;
-    }
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 
-    .dark-mode .project-card h3,
-    .dark-mode .project-card p {
-      color: #e0e0e0;
-    }
+.project-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+}
 
-    .publications ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-    }
+.project-card h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
 
-    .publications ul li {
-      margin-bottom: 0.5rem;
-    }
+.project-card h3 a {
+  text-decoration: none;
+  color: #1e293b;
+}
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #1e1e2f;
-      color: #fff;
-      grid-column: 1 / -1;
-    }
-  </style>
-</head>
+.project-card h3 a:hover {
+  color: #3b82f6;
+}
 
-<body>
-  <aside>
-    <div class="side-section">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: olushola.akinbusola@gmail.com</li>
-        <li><a href="https://github.com/AKinbusola" target="_blank" style="color:#90caf9;">GitHub Profile</a></li>
-      </ul>
-    </div>
+.project-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+}
 
-    <div class="side-section">
-      <h2>Skills</h2>
-      <ul>
-        <li>Python, R, SQL</li>
-        <li>Power BI, Tableau, Excel</li>
-        <li>Statistical Modeling, Forecasting</li>
-        <li>Data Cleaning, Dashboards</li>
-        <li>ETL Pipeline development</li>
-        <li>Web Scrapping</li>
-        <li>Machine Learning & NLP</li>
-      </ul>
-    </div>
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1e293b;
+  color: #fff;
+  grid-column: 1 / -1;
+}
 
-    <div class="side-section">
-      <h2>Education</h2>
-      <ul>
-        <li>MS Applied Mathematics, Indiana University of Pennsylvania (2024)</li>
-        <li>BS Computer Science, Crawford University (2016)</li>
-      </ul>
-    </div>
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  body {
+    grid-template-columns: 1fr;
+  }
 
-    <div class="side-section">
-      <h2>Certifications</h2>
-      <ul>
-        <li>Six Sigma Yellow Belt</li>
-        <li>Google Data Analytics</li>
-        <li>Google BI & Advanced Data Analytics</li>
-        <li>Professional Scrum Master</li>
-      </ul>
-    </div>
-  </aside>
-
-  <main>
-    <section class="pane">
-      <header>
-        <img src="headshot2.jpg" alt="Akinbusola Olushola">
-        <div class="intro-text">
-          <h1>Akinbusola Olushola</h1>
-          <p>Data Analyst | Business Intelligence Analyst | Data Scientist</p>
-          <div class="links">
-            <a href="https://www.linkedin.com/in/akinbusola-olushola">LinkedIn</a>
-            <a href="https://scholar.google.com/citations?user=sMEn0rwAAAAJ&hl=en">Google Scholar</a>
-            <a href="https://www.researchgate.net/profile/Akinbusola-Olushola">ResearchGate</a>
-          </div>
-          <button class="dark-toggle" onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
-        </div>
-      </header>
-    </section>
-
-    <section class="pane about">
-      <h2>About Me</h2>
-      <p>
-       I’m a data analyst with a strong foundation in SQL, Python, R, and data visualization. I have hands-on experience supporting decision-making across public sector, 
-        finance, and healthcare domains. My work focuses on building insightful dashboards, uncovering trends in complex datasets, and collaborating across teams to streamline data workflows. 
-        I'm passionate about turning raw data into meaningful insights that drive strategic planning and measurable results.
-      </p>
-    </section>
-
-   <section class="pane projects">
-  <h2>Projects</h2>
-  <div class="project-card">
-    <img src="project1.jpeg" alt="Project 1">
-    <h3><a href="https://github.com/AKinbusola/New-York-House-Pricing-Prediction">House Price Prediction</a></h3>
-    <p>Built a regression model in R to predict NY housing prices using zip code and property features.</p>
-  </div>
-  <div class="project-card">
-    <img src="project2.jpg" alt="Project 2">
-    <h3><a href="https://akinbusola.shinyapps.io/sentiment_analysis/">Customer-Review-Sentiment-Analyzer---ShinyApp</a></h3>
-    <p>Built an interactive R Shiny web app that analyzes customer reviews to identify and visualize sentiment patterns and frequent keywords.</p>
-  </div>
-  <div class="project-card">
-    <img src="project3.png" alt="Project 3">
-    <h3><a href="https://github.com/AKinbusola/Exploratory-Data-Analysis-With-Jumia-websites">Exploratory Data Analysis of Jumia Smartphone Listings</a></h3>
-    <p>Scraped and analyzed Jumia smartphone data using web scraping and NLP to extract insights from listings.</p>
-  </div>
-  <div class="project-card">
-    <img src="project4.jpg" alt="Project 4">
-    <h3><a href="https://github.com/AKinbusola/Emergency-Room-Visits-Dashboard">Emergency Room Visits Dashboard</a></h3>
-    <p>Built an interactive dashboard to visualize trends and KPIs in emergency healthcare visits using Power BI.</p>
-  </div>
-  <div class="project-card">
-    <img src="project5.jpg" alt="Project 5">
-    <h3><a href="https://akinbusola.shinyapps.io/doc_compare/">Job Description & CV Similarity Checker</a></h3>
-    <p>R Shiny app that evaluates resume alignment with job descriptions using text similarity scoring.</p>
-  </div>
-
-  <div class="project-card">
-    <img src=" projectx.jpg" alt="etl">
-    <h3><a href="https://github.com/AKinbusola/Customer-Orders-ETL-Pipeline-Project">Customer-Orders-ETL-Pipeline-Project</a></h3>
-    <p>This project demonstrates a complete ETL (Extract, Transform, Load) pipeline using Python (Pandas, SQLAlchemy) and MySQL Workbench.
-      The data used comes from a Kaggle dataset (orders.csv) containing historical order transactions. The objective is to clean, enrich, and standardize the data, 
-      then move it between databases in a professional workflow.</p>
-  </div>
-
-  <div class="project-card">
-    <img src=" project6.jpg" alt="Minnesota_traffic">
-    <h3><a href="https://public.tableau.com/app/profile/akinbusola/viz/MinnesotaTrafficViz/Dashboard1">Visualization-of-Minnesota-Traffic</a></h3>
-    <p>Built a Tableau dashboard that visualizes traffic patterns in Minnesota over the years 2012 to 2018, considering various factors such as traffic volume, weather conditions, 
-      national holidays, months of the year, and hours of the day.</p>
-  </div>
-     
-</section>
-
-
-
-   
-  </main>
-
-  <footer>
-    Designed by Akinbusola
-  </footer>
-</body>
-
-</html>
+  aside {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+}
