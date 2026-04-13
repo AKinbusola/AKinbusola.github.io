@@ -1,199 +1,337 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-body {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  min-height: 100vh;
-  background: #f5f7fb;
-  transition: all 0.3s ease;
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akinbusola Olushola | Data Analyst Portfolio</title>
 
-/* DARK MODE */
-.dark-mode {
-  background: #0f172a;
-  color: #e2e8f0;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-.dark-mode .pane,
-.dark-mode .project-card,
-.dark-mode header,
-.dark-mode .about {
-  background: #1e293b;
-  color: #e2e8f0;
-}
+    body {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      min-height: 100vh;
+      background: #f5f7fb;
+      transition: all 0.3s ease;
+    }
 
-/* SIDEBAR */
-aside {
-  background: linear-gradient(180deg, #1e293b, #0f172a);
-  color: #fff;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+    /* DARK MODE */
+    .dark-mode {
+      background: #0f172a;
+      color: #e2e8f0;
+    }
 
-.side-section {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-radius: 10px;
-  transition: transform 0.2s;
-}
+    .dark-mode .pane,
+    .dark-mode .project-card {
+      background: #1e293b;
+      color: #e2e8f0;
+    }
 
-.side-section:hover {
-  transform: translateY(-3px);
-}
+    /* SIDEBAR */
+    aside {
+      background: linear-gradient(180deg, #1e293b, #0f172a);
+      color: #fff;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 
-.side-section h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.6rem;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  padding-bottom: 0.3rem;
-}
+    .side-section {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 10px;
+      transition: 0.2s;
+    }
 
-.side-section ul {
-  list-style: none;
-  padding-left: 0;
-}
+    .side-section:hover {
+      transform: translateY(-3px);
+    }
 
-.side-section ul li {
-  margin-bottom: 0.4rem;
-  font-size: 0.9rem;
-}
+    .side-section h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 0.3rem;
+    }
 
-/* MAIN */
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-}
+    .side-section ul {
+      list-style: none;
+      font-size: 0.9rem;
+    }
 
-.pane {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 1.5rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-}
+    .side-section li {
+      margin-bottom: 0.4rem;
+    }
 
-/* HEADER */
-header {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
+    /* MAIN */
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem;
+    }
 
-header img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 3px solid #3b82f6;
-}
+    .pane {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
 
-header h1 {
-  font-size: 2rem;
-}
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
 
-header p {
-  font-weight: 500;
-  color: #64748b;
-}
+    header img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid #3b82f6;
+      object-fit: cover;
+    }
 
-.links a {
-  margin-right: 12px;
-  text-decoration: none;
-  color: #3b82f6;
-  font-weight: 500;
-}
+    header h1 {
+      font-size: 2rem;
+    }
 
-.links a:hover {
-  text-decoration: underline;
-}
+    header p {
+      color: #64748b;
+      margin: 5px 0;
+    }
 
-/* BUTTON */
-.dark-toggle {
-  margin-top: 10px;
-  padding: 0.4rem 0.8rem;
-  cursor: pointer;
-  background: #3b82f6;
-  border: none;
-  color: #fff;
-  border-radius: 6px;
-  transition: 0.2s;
-}
+    .links a {
+      margin-right: 12px;
+      text-decoration: none;
+      color: #3b82f6;
+      font-weight: 500;
+    }
 
-.dark-toggle:hover {
-  background: #2563eb;
-}
+    .links a:hover {
+      text-decoration: underline;
+    }
 
-/* PROJECTS */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
+    /* CTA */
+    .cta {
+      margin-top: 8px;
+      font-weight: 600;
+    }
 
-.project-card {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
+    .cta a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
+    /* BUTTON */
+    .dark-toggle {
+      margin-top: 10px;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      background: #3b82f6;
+      border: none;
+      color: #fff;
+      border-radius: 6px;
+    }
 
-.project-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 0.6rem;
-}
+    .dark-toggle:hover {
+      background: #2563eb;
+    }
 
-.project-card h3 {
-  margin-bottom: 0.4rem;
-  font-size: 1rem;
-}
+    /* PROJECTS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
 
-.project-card h3 a {
-  text-decoration: none;
-  color: #1e293b;
-}
+    .project-card {
+      padding: 1rem;
+      border-radius: 12px;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
 
-.project-card h3 a:hover {
-  color: #3b82f6;
-}
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
 
-.project-card p {
-  font-size: 0.85rem;
-  color: #64748b;
-}
+    .project-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.6rem;
+    }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #1e293b;
-  color: #fff;
-  grid-column: 1 / -1;
-}
+    .project-card h3 a {
+      text-decoration: none;
+      color: #1e293b;
+    }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  body {
-    grid-template-columns: 1fr;
-  }
+    .project-card h3 a:hover {
+      color: #3b82f6;
+    }
 
-  aside {
-    flex-direction: row;
-    overflow-x: auto;
-  }
-}
+    .project-card p {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1e293b;
+      color: #fff;
+      grid-column: 1 / -1;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      body {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        flex-direction: row;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside>
+    <div class="side-section">
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: olushola.akinbusola@gmail.com</li>
+        <li><a href="https://github.com/AKinbusola" target="_blank" style="color:#90caf9;">GitHub</a></li>
+      </ul>
+    </div>
+
+    <div class="side-section">
+      <h2>Skills</h2>
+      <ul>
+        <li>Python, R, SQL</li>
+        <li>Power BI, Tableau, Excel</li>
+        <li>Statistical Modeling</li>
+        <li>ETL Pipelines</li>
+        <li>Machine Learning & NLP</li>
+      </ul>
+    </div>
+
+    <div class="side-section">
+      <h2>Education</h2>
+      <ul>
+        <li>MS Applied Mathematics (2024)</li>
+        <li>BS Computer Science (2016)</li>
+      </ul>
+    </div>
+
+    <div class="side-section">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Google Data Analytics</li>
+        <li>Google BI Analytics</li>
+        <li>Scrum Master</li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+
+    <section class="pane">
+      <header>
+        <img src="headshot2.jpg" alt="Profile Photo">
+        <div>
+          <h1>Akinbusola Olushola</h1>
+          <p>Data Analyst specializing in SQL, Python, and Business Intelligence</p>
+
+          <div class="links">
+            <a href="https://www.linkedin.com/in/akinbusola-olushola">LinkedIn</a>
+            <a href="https://scholar.google.com">Scholar</a>
+            <a href="https://researchgate.net">ResearchGate</a>
+          </div>
+
+          <p class="cta">
+            <a href="mailto:olushola.akinbusola@gmail.com">📩 Open to Data Analyst Opportunities</a>
+          </p>
+
+          <button class="dark-toggle" onclick="document.body.classList.toggle('dark-mode')">
+            Toggle Dark Mode
+          </button>
+        </div>
+      </header>
+    </section>
+
+    <section class="pane">
+      <h2>About Me</h2>
+      <p>
+        Data analyst with experience in SQL, Python, and R, delivering insights across finance, healthcare, and public sectors.
+        I specialize in dashboards, data pipelines, and transforming complex data into actionable insights.
+      </p>
+    </section>
+
+    <section class="pane">
+      <h2>Projects</h2>
+      <div class="projects">
+
+        <div class="project-card">
+          <img src="project1.jpeg">
+          <h3><a href="https://github.com/AKinbusola/New-York-House-Pricing-Prediction">House Price Prediction</a></h3>
+          <p>Regression model predicting housing prices using R.</p>
+        </div>
+
+        <div class="project-card">
+          <img src="project2.jpg">
+          <h3><a href="#">Sentiment Analyzer (R Shiny)</a></h3>
+          <p>Interactive app for analyzing customer reviews and sentiment trends.</p>
+        </div>
+
+        <div class="project-card">
+          <img src="project3.png">
+          <h3><a href="#">Jumia Data Analysis</a></h3>
+          <p>Web scraping and NLP analysis of smartphone listings.</p>
+        </div>
+
+        <div class="project-card">
+          <img src="project4.jpg">
+          <h3><a href="#">ER Dashboard (Power BI)</a></h3>
+          <p>Healthcare analytics dashboard showing key KPIs.</p>
+        </div>
+
+        <div class="project-card">
+          <img src="project5.jpg">
+          <h3><a href="#">Resume Matcher App</a></h3>
+          <p>Compares CV with job descriptions using NLP similarity scoring.</p>
+        </div>
+
+        <div class="project-card">
+          <img src="projectx.jpg">
+          <h3><a href="#">ETL Pipeline Project</a></h3>
+          <p>End-to-end ETL pipeline using Python and MySQL.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Akinbusola Olushola
+  </footer>
+
+</body>
+</html>
